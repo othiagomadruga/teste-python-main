@@ -16,7 +16,7 @@ version = 0.1
 # (Obrigatório) O caminho para o seu arquivo Python principal.
 main.py = main.py
 
-# AQUI ESTÁ A NOVA LINHA: O diretório de onde os arquivos fonte do app serão copiados.
+# O diretório de onde os arquivos fonte do app serão copiados.
 # O ponto '.' significa o diretório atual onde o Buildozer está sendo executado.
 source.dir = .
 
@@ -32,6 +32,14 @@ android.minapi = 21
 # Permissões Android que seu aplicativo precisa.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
+# Força o Buildozer a usar o canal estável do python-for-android (P4A),
+# o que geralmente usa Gradle para a compilação e evita o Apache Ant.
+android.p4a_channel = stable
+
+# Habilita o suporte a Multidex, necessário para aplicativos grandes
+# ou com muitas bibliotecas, para evitar limites de métodos no Android.
+android.enable_multidex = True
+
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
 
@@ -41,4 +49,5 @@ android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 [buildozer]
 # Nível de log (0 = silencioso, 1 = erro, 2 = aviso, 3 = informação, 4 = depuração)
+# Mantido em 4 para obter logs detalhados se houver algum outro problema.
 log_level = 4
