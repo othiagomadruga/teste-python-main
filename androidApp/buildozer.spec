@@ -24,11 +24,10 @@ source.dir = .
 requirements = python3,kivy,requests,python-for-android
 
 # Versão da API Android que o APK será compilado para.
-# Removido o comentário inline que causava erro no sdkmanager.
 android.api = 29
 
-# (Opcional) A versão mínima da API Android suportada.
-android.minapi = 21
+# AQUI ESTÁ A LINHA CORRIGIDA: Alinhando a API mínima com a API de destino.
+android.minapi = 29
 
 # Permissões Android que seu aplicativo precisa.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
