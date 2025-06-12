@@ -18,7 +18,7 @@ main.py = main.py
 
 # O diretório de onde os arquivos fonte do app serão copiados.
 # O ponto '.' significa o diretório atual onde o Buildozer está sendo executado.
-source.dir =.
+source.dir = . # CORRIGIDO: Adicionado espaço entre '=' e '.'
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
 requirements = python3,kivy,requests,python-for-android
@@ -43,9 +43,12 @@ android.enable_multidex = True
 # Aceita automaticamente as licenças do Android SDK.
 android.accept_sdk_license = True
 
-# AQUI ESTÁ A LINHA CRÍTICA: Compilando apenas para armeabi-v7a para contornar o erro.
-# Se esta compilação for bem-sucedida, podemos tentar adicionar arm64-v8a depois.
+# Especifica a arquitetura de CPU Android para a qual o APK será construído.
+# Compilando apenas para armeabi-v7a para contornar erros anteriores.
 android.arch = armeabi-v7a
+
+# CORRIGIDO: Especifica a versão do NDK. A versão 25b é a recomendada.
+android.ndk = 25b
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
