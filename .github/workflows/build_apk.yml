@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10' # Usando Python 3.10
+        python-version: '3.10' # Usando Python 3.10 para compatibilidade
 
     - name: Install Buildozer
       run: |
@@ -30,13 +30,9 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev
 
-    - name: Change to App Directory
-      # AQUI ESTÁ A NOVA LINHA DE CORREÇÃO!
-      # Altere 'teste-python-main' para o NOME REAL do diretório onde seu buildozer.spec e main.py estão.
-      run: cd androidApp # Este comando muda o diretório de trabalho para a pasta do seu app
-
     - name: Build Android APK
-      # Agora o Buildozer será executado dentro do diretório correto.
+      # AQUI ESTÁ A CORREÇÃO: Usando 'working-directory' para garantir o caminho correto
+      working-directory: androidApp # Este é o diretório RELATIVO à raiz do repositório
       run: |
         buildozer android debug
 
