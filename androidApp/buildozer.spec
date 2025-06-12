@@ -40,6 +40,9 @@ android.p4a_channel = stable
 # ou com muitas bibliotecas, para evitar limites de métodos no Android.
 android.enable_multidex = True
 
+# AQUI ESTÁ A NOVA LINHA: Aceita automaticamente as licenças do Android SDK.
+android.accept_sdk_license = True
+
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
 
