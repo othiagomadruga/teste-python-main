@@ -21,8 +21,8 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# AQUI ESTÁ A LINHA CORRIGIDA: Mudando para Python 3.8.10 para evitar o erro 404 de download.
-requirements = python3==3.8.10,kivy,requests,python-for-android==2023.11.13
+# AQUI ESTÁ A LINHA CORRIGIDA: Fixando python-for-android para a versão 2021.08.02 para maior estabilidade.
+requirements = python3==3.8.10,kivy,requests,python-for-android==2021.08.02
 
 # Versão da API Android que o APK será compilado para.
 android.api = 29
