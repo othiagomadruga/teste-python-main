@@ -21,8 +21,8 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# AQUI ESTÁ A LINHA CORRIGIDA: Atualizando python-for-android para a versão mais recente e estável.
-requirements = python3==3.9,kivy,requests,python-for-android==2024.05.02
+# AQUI ESTÁ A LINHA CORRIGIDA: Mudando para Python 3.8 e fixando python-for-android para 2023.11.13.
+requirements = python3==3.8,kivy,requests,python-for-android==2023.11.13
 
 # Versão da API Android que o APK será compilado para.
 android.api = 29
@@ -48,8 +48,7 @@ android.archs = armeabi-v7a, arm64-v8a
 # Especifica a versão do NDK para 25b, conforme recomendado.
 android.ndk = 25b
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Removendo a exclusão da receita libffi, pois ela é uma dependência core.
-# exclude_recipes = libffi
+# exclude_recipes = libffi foi removido/comentado.
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
