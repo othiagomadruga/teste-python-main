@@ -27,10 +27,15 @@ jobs:
         pip install cython
 
     - name: Install Buildozer System Dependencies
-      # AQUI ESTÁ A MUDANÇA: Adicionando 'automake' para garantir todas as ferramentas de build
       run: |
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev automake
+
+    - name: Clean Buildozer Cache
+      # AQUI ESTÁ A NOVA LINHA: Limpando o cache do Buildozer
+      working-directory: androidApp
+      run: |
+        buildozer clean
 
     - name: Build Android APK
       working-directory: androidApp
