@@ -21,7 +21,8 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-requirements = python3,kivy,requests
+# AQUI ESTÁ A LINHA CORRIGIDA: Adicionando uma versão fixa do python-for-android.
+requirements = python3,kivy,requests,python-for-android==2022.09.04
 
 # Versão da API Android que o APK será compilado para.
 android.api = 29
@@ -32,8 +33,8 @@ android.minapi = 29
 # Permissões Android que seu aplicativo precisa.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-# Força o Buildozer a usar o canal 'master' para as últimas correções do python-for-android.
-android.p4a_channel = master
+# Removido android.p4a_channel = master, pois a versão fixa tem precedência.
+# android.p4a_channel = master
 
 # Habilita o suporte a Multidex, necessário para aplicativos grandes
 # ou com muitas bibliotecas, para evitar limites de métodos no Android.
