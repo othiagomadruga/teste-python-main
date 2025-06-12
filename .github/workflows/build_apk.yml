@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Checkout Repository
       # Ação para clonar seu repositório GitHub para o ambiente de compilação.
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
       # Configura o ambiente Python no servidor de compilação.
