@@ -21,8 +21,8 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# Especificando explicitamente a versão do Python 3.
-requirements = python3==3.9,kivy,requests,python-for-android==2022.09.04
+# AQUI ESTÁ A LINHA CORRIGIDA: Atualizando python-for-android para a versão mais recente e estável.
+requirements = python3==3.9,kivy,requests,python-for-android==2024.05.02
 
 # Versão da API Android que o APK será compilado para.
 android.api = 29
@@ -33,8 +33,7 @@ android.minapi = 29
 # Permissões Android que seu aplicativo precisa.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-# Removido android.p4a_channel = master, pois a versão fixa tem precedência.
-# android.p4a_channel = master
+# android.p4a_channel foi removido, pois a versão fixa tem precedência.
 
 # Habilita o suporte a Multidex, necessário para aplicativos grandes
 # ou com muitas bibliotecas, para evitar limites de métodos no Android.
@@ -46,11 +45,11 @@ android.accept_sdk_license = True
 # Especifica ambas as arquiteturas de CPU Android para as quais o APK será construído.
 android.archs = armeabi-v7a, arm64-v8a
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Especificando a versão do NDK para 25b, conforme recomendado.
+# Especifica a versão do NDK para 25b, conforme recomendado.
 android.ndk = 25b
 
-# Exclui a receita de compilação da libffi.
-exclude_recipes = libffi
+# AQUI ESTÁ A LINHA CORRIGIDA: Removendo a exclusão da receita libffi, pois ela é uma dependência core.
+# exclude_recipes = libffi
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
