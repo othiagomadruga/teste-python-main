@@ -33,7 +33,7 @@ jobs:
     - name: Change to App Directory
       # AQUI ESTÁ A NOVA LINHA DE CORREÇÃO!
       # Altere 'teste-python-main' para o NOME REAL do diretório onde seu buildozer.spec e main.py estão.
-      run: cd teste-python-main # Este comando muda o diretório de trabalho para a pasta do seu app
+      run: cd teste-python-main/androidApp # Este comando muda o diretório de trabalho para a pasta do seu app
 
     - name: Build Android APK
       # Agora o Buildozer será executado dentro do diretório correto.
