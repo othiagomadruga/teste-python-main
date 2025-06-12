@@ -1,56 +1,44 @@
 name: Build Kivy Android APK
 
-# Este workflow será disparado sempre que houver um push ou pull request na branch 'main'.
 on:
   push:
     branches:
-      - main # Altere para a branch principal do seu repositório (ex: master, main)
+      - main
   pull_request:
     branches:
       - main
 
-# Define um único job para construir o APK.
 jobs:
   build-android:
-    # O job será executado em um ambiente Ubuntu Linux, que é o ideal para o Buildozer.
     runs-on: ubuntu-latest
 
-    # Os passos que serão executados neste job.
     steps:
     - name: Checkout Repository
-      # Ação para clonar seu repositório GitHub para o ambiente de compilação.
       uses: actions/checkout@v3
 
     - name: Set up Python
-      # Configura o ambiente Python no servidor de compilação.
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x' # Define a versão do Python a ser usada (ex: '3.9', '3.10', '3.x' para a última).
+        python-version: '3.10' # Usando Python 3.10 para compatibilidade
 
-    - name: Install Buildozer
-      # Instala a ferramenta Buildozer usando pip.
+    - name: Install Buildozer and Cython
+      # Instalando Buildozer e agora Cython, que é uma dependência crucial
       run: |
         pip install buildozer
+        pip install cython # <-- NOVA LINHA: Instalando Cython
 
-    - name: Install Buildozer Dependencies
-      # Instala as dependências do sistema operacional necessárias para o Buildozer compilar o Android.
-      # 'sudo apt-get update' atualiza a lista de pacotes.
-      # 'sudo apt-get install -y' instala os pacotes sem pedir confirmação.
+    - name: Install Buildozer System Dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev
 
     - name: Build Android APK
-      # Este é o comando principal que usa o Buildozer para criar o APK.
-      # Ele lerá as configurações do seu 'buildozer.spec' e iniciará o processo de compilação.
-      # O APK resultante (de depuração) será colocado no diretório './bin/'.
+      working-directory: androidApp # Garantindo que o Buildozer execute no diretório correto
       run: |
         buildozer android debug
 
     - name: Upload APK as Artifact
-      # Uma vez que o APK é gerado, esta ação o empacota como um "artefato" do workflow.
-      # Você poderá baixar este artefato (um arquivo .zip contendo o APK) da página de Actions do GitHub.
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: Kivy-App-APK # Nome do artefato que você verá no GitHub
-        path: bin/*.apk    # Caminho para onde o Buildozer coloca os APKs
+        name: Kivy-App-APK
+        path: bin/*.apk
