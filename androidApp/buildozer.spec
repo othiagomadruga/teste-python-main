@@ -21,7 +21,7 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# AQUI ESTÁ A LINHA CORRIGIDA: Especificando explicitamente a versão do Python 3.
+# Especificando explicitamente a versão do Python 3.
 requirements = python3==3.9,kivy,requests,python-for-android==2022.09.04
 
 # Versão da API Android que o APK será compilado para.
@@ -46,10 +46,10 @@ android.accept_sdk_license = True
 # Especifica ambas as arquiteturas de CPU Android para as quais o APK será construído.
 android.archs = armeabi-v7a, arm64-v8a
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Especificando a versão do NDK para 23b.
-android.ndk = 23b
+# AQUI ESTÁ A LINHA CORRIGIDA: Especificando a versão do NDK para 25b, conforme recomendado.
+android.ndk = 25b
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Exclui a receita de compilação da libffi.
+# Exclui a receita de compilação da libffi.
 exclude_recipes = libffi
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
