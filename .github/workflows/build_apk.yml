@@ -50,7 +50,7 @@ jobs:
     - name: Upload APK as Artifact
       # Uma vez que o APK é gerado, esta ação o empacota como um "artefato" do workflow.
       # Você poderá baixar este artefato (um arquivo .zip contendo o APK) da página de Actions do GitHub.
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Kivy-App-APK # Nome do artefato que você verá no GitHub
         path: bin/*.apk    # Caminho para onde o Buildozer coloca os APKs
