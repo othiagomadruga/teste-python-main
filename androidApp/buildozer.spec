@@ -14,29 +14,22 @@ package.domain = com.suaempresa
 version = 0.1
 
 # (Obrigatório) O caminho para o seu arquivo Python principal.
-# Se main.py estiver na raiz do projeto, use 'main.py'.
 main.py = main.py
 
+# AQUI ESTÁ A NOVA LINHA: O diretório de onde os arquivos fonte do app serão copiados.
+# O ponto '.' significa o diretório atual onde o Buildozer está sendo executado.
+source.dir = .
+
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# 'python3' e 'kivy' são essenciais para Kivy.
-# 'requests' é necessário para a comunicação HTTP com seu backend Flask.
-# 'python-for-android' é um requisito interno do Buildozer.
-# As outras libs do seu requirements.txt (flask, pymysql, etc.) são para o backend
-# e NÃO devem ser incluídas aqui.
 requirements = python3,kivy,requests,python-for-android
 
 # Versão da API Android que o APK será compilado para.
-# Recomenda-se uma versão recente para compatibilidade e segurança.
-# A API 33 (Android 13) é uma boa escolha atualmente.
 android.api = 33
 
 # (Opcional) A versão mínima da API Android suportada.
-# Certifique-se de que é 21 ou superior.
 android.minapi = 21
 
 # Permissões Android que seu aplicativo precisa.
-# 'INTERNET' é crucial para comunicação com o backend.
-# 'READ_EXTERNAL_STORAGE' e 'WRITE_EXTERNAL_STORAGE' são solicitadas no seu main.py.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
