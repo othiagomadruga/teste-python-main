@@ -21,8 +21,8 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# AQUI ESTÁ A LINHA CORRIGIDA: Removido 'libffi' dos requisitos, experimentalmente.
-requirements = python3,kivy,requests,python-for-android
+# AQUI ESTÁ A LINHA CORRIGIDA: Removidos 'libffi' e 'python-for-android' dos requisitos.
+requirements = python3,kivy,requests
 
 # Versão da API Android que o APK será compilado para.
 android.api = 29
