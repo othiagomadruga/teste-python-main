@@ -22,18 +22,18 @@ jobs:
         python-version: '3.10' # Usando Python 3.10 para compatibilidade
 
     - name: Install Buildozer and Cython
-      # Instalando Buildozer e agora Cython, que é uma dependência crucial
       run: |
         pip install buildozer
-        pip install cython # <-- NOVA LINHA: Instalando Cython
+        pip install cython
 
     - name: Install Buildozer System Dependencies
+      # AQUI ESTÁ A MUDANÇA: Adicionando 'automake' para garantir todas as ferramentas de build
       run: |
         sudo apt-get update
-        sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev
+        sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev automake
 
     - name: Build Android APK
-      working-directory: androidApp # Garantindo que o Buildozer execute no diretório correto
+      working-directory: androidApp
       run: |
         buildozer android debug
 
