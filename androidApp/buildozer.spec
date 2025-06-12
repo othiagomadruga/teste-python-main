@@ -23,8 +23,8 @@ source.dir = .
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
 requirements = python3,kivy,requests,python-for-android
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Alterando a API do Android para 29 para maior compatibilidade.
-android.api = 29
+# Versão da API Android que o APK será compilado para.
+android.api = 29 # Mantendo API 29 para maior compatibilidade.
 
 # (Opcional) A versão mínima da API Android suportada.
 android.minapi = 21
@@ -32,9 +32,8 @@ android.minapi = 21
 # Permissões Android que seu aplicativo precisa.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-# Força o Buildozer a usar o canal estável do python-for-android (P4A),
-# o que geralmente usa Gradle para a compilação e evita o Apache Ant.
-android.p4a_channel = stable
+# AQUI ESTÁ A LINHA CORRIGIDA: Forçando o canal 'master' para as últimas correções do python-for-android.
+android.p4a_channel = master
 
 # Habilita o suporte a Multidex, necessário para aplicativos grandes
 # ou com muitas bibliotecas, para evitar limites de métodos no Android.
@@ -46,7 +45,7 @@ android.accept_sdk_license = True
 # Especifica a arquitetura de CPU Android para a qual o APK será construído.
 android.archs = armeabi-v7a
 
-# Especifica a versão do NDK recomendada pelo log anterior.
+# Especifica a versão do NDK.
 android.ndk = 25b
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
