@@ -31,7 +31,14 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev automake
 
-    # O passo 'Clean Buildozer Cache' foi removido temporariamente.
+    # Limpeza manual e agressiva dos caches do Buildozer
+    # Isso garante que todas as dependências e o python-for-android sejam baixados e compilados do zero.
+    - name: Manual Buildozer Cache Cleanup
+      run: |
+        # Removendo o cache global do buildozer
+        rm -rf ~/.buildozer
+        # Removendo o cache específico do projeto
+        rm -rf androidApp/.buildozer
 
     - name: Build Android APK
       working-directory: androidApp # Garantindo que o Buildozer execute no diretório correto
