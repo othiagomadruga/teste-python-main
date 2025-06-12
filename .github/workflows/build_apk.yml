@@ -31,14 +31,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev automake
 
-    - name: Clean Buildozer Cache
-      # Reintroduzindo o comando 'buildozer clean' para garantir um build limpo.
-      working-directory: androidApp
-      run: |
-        buildozer clean
+    # O passo 'Clean Buildozer Cache' foi removido temporariamente.
 
     - name: Build Android APK
-      working-directory: androidApp
+      working-directory: androidApp # Garantindo que o Buildozer execute no diretório correto
       run: |
         buildozer android debug
 
