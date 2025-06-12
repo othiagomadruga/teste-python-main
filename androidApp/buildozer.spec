@@ -21,7 +21,6 @@ main.py = main.py
 source.dir = .
 
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
-# AQUI ESTÁ A LINHA CORRIGIDA: Removidos 'libffi' e 'python-for-android' dos requisitos.
 requirements = python3,kivy,requests
 
 # Versão da API Android que o APK será compilado para.
@@ -43,8 +42,8 @@ android.enable_multidex = True
 # Aceita automaticamente as licenças do Android SDK.
 android.accept_sdk_license = True
 
-# Especifica a arquitetura de CPU Android para a qual o APK será construído.
-android.archs = armeabi-v7a
+# Especifica ambas as arquiteturas de CPU Android para as quais o APK será construído.
+android.archs = armeabi-v7a, arm64-v8a
 
 # Especifica a versão do NDK.
 android.ndk = 25b
