@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10' # Usando Python 3.10 para compatibilidade
+        python-version: '3.8' # AQUI ESTÁ A LINHA CORRIGIDA: Alterando para Python 3.8
 
     - name: Install Buildozer and Cython
       run: |
@@ -31,17 +31,14 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses-dev libbz2-dev libssl-dev libsqlite3-dev automake
 
-    # Limpeza manual e agressiva dos caches do Buildozer
-    # Isso garante que todas as dependências e o python-for-android sejam baixados e compilados do zero.
-    - name: Manual Buildozer Cache Cleanup
+    - name: Clean Buildozer Cache
+      # Usando o comando padrão 'buildozer clean' para uma limpeza controlada.
+      working-directory: androidApp
       run: |
-        # Removendo o cache global do buildozer
-        rm -rf ~/.buildozer
-        # Removendo o cache específico do projeto
-        rm -rf androidApp/.buildozer
+        buildozer clean
 
     - name: Build Android APK
-      working-directory: androidApp # Garantindo que o Buildozer execute no diretório correto
+      working-directory: androidApp
       run: |
         buildozer android debug
 
