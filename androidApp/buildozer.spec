@@ -44,8 +44,8 @@ android.enable_multidex = True
 android.accept_sdk_license = True
 
 # AQUI ESTÁ A NOVA LINHA: Especifica a versão do NDK a ser usada.
-# NDK r25b é uma versão estável e frequentemente compatível.
-android.ndk = 25b
+# NDK r21e é uma versão comprovadamente estável para muitos builds Kivy.
+android.ndk = 21e
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
