@@ -24,7 +24,8 @@ source.dir = .
 requirements = python3,kivy,requests,python-for-android
 
 # Versão da API Android que o APK será compilado para.
-android.api = 29 # Mantendo API 29 para maior compatibilidade.
+# Removido o comentário inline que causava erro no sdkmanager.
+android.api = 29
 
 # (Opcional) A versão mínima da API Android suportada.
 android.minapi = 21
@@ -32,7 +33,7 @@ android.minapi = 21
 # Permissões Android que seu aplicativo precisa.
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Forçando o canal 'master' para as últimas correções do python-for-android.
+# Força o Buildozer a usar o canal 'master' para as últimas correções do python-for-android.
 android.p4a_channel = master
 
 # Habilita o suporte a Multidex, necessário para aplicativos grandes
