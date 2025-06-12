@@ -40,8 +40,12 @@ android.p4a_channel = stable
 # ou com muitas bibliotecas, para evitar limites de métodos no Android.
 android.enable_multidex = True
 
-# AQUI ESTÁ A NOVA LINHA: Aceita automaticamente as licenças do Android SDK.
+# Aceita automaticamente as licenças do Android SDK.
 android.accept_sdk_license = True
+
+# AQUI ESTÁ A NOVA LINHA: Especifica a versão do NDK a ser usada.
+# NDK r25b é uma versão estável e frequentemente compatível.
+android.ndk = 25b
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
 # icon.filename = %(source.dir)s/icon.png
@@ -52,5 +56,4 @@ android.accept_sdk_license = True
 
 [buildozer]
 # Nível de log (0 = silencioso, 1 = erro, 2 = aviso, 3 = informação, 4 = depuração)
-# Mantido em 4 para obter logs detalhados se houver algum outro problema.
 log_level = 4
