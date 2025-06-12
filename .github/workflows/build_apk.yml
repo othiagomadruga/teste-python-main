@@ -25,7 +25,7 @@ jobs:
       # Configura o ambiente Python no servidor de compilação.
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x' # Define a versão do Python a ser usada (ex: '3.9', '3.10', '3.x' para a última).
+        python-version: '3.10' # Define a versão do Python a ser usada (ex: '3.9', '3.10', '3.x' para a última).
 
     - name: Install Buildozer
       # Instala a ferramenta Buildozer usando pip.
