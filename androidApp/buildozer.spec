@@ -23,8 +23,8 @@ source.dir = .
 # (Obrigatório) Todas as dependências Python que seu aplicativo Kivy utiliza.
 requirements = python3,kivy,requests,python-for-android
 
-# Versão da API Android que o APK será compilado para.
-android.api = 33
+# AQUI ESTÁ A LINHA CORRIGIDA: Alterando a API do Android para 29 para maior compatibilidade.
+android.api = 29
 
 # (Opcional) A versão mínima da API Android suportada.
 android.minapi = 21
@@ -43,11 +43,10 @@ android.enable_multidex = True
 # Aceita automaticamente as licenças do Android SDK.
 android.accept_sdk_license = True
 
-# AQUI ESTÁ A LINHA CORRIGIDA: Usa 'android.archs' em vez de 'android.arch'
-# Compilando para a arquitetura armeabi-v7a. Você pode adicionar 'arm64-v8a' se precisar de suporte 64-bit.
+# Especifica a arquitetura de CPU Android para a qual o APK será construído.
 android.archs = armeabi-v7a
 
-# Especifica a versão do NDK recomendada.
+# Especifica a versão do NDK recomendada pelo log anterior.
 android.ndk = 25b
 
 # (Opcional) URL da sua icon (ex: icon.png na raiz do projeto)
